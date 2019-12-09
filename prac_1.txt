@@ -1,0 +1,82 @@
+client_master 1;
+
+create table product_master2 (
+product_no varchar2(6) primary key,
+description varchar2(15),
+profitPercent number(4,2),
+unitMeasure varchar2(10),
+qtyonhand number(8),
+reordervl number(8),
+sellprice number(8,2),
+costprice number(8,2)
+);
+
+
+create table salesman_master2 (
+salesmanno varchar2(6) primary key,
+salesmanname varchar(20),
+address1 varchar2(30),
+address2 varchar2(30),
+city varchar2(20),
+pincode number(8),
+state varchar2(20),
+salamt number(8,2),
+tgttoget number(6,2),
+ytdsales number(6,2),
+remarks varchar2(60)
+);
+
+
+insert into client_master1 (clientno,name,city,pincode,state,baldue) values
+('c00001','korth sudarshan','mumbai',400054,'maharashtra',15000),
+('c00002','mamta muzumdar','madras',780001,'tamil nadu',0),
+('c00003','chhaya banker','mumbai',400057,'maharashtra',5000),
+('c00004','ashwini joshi','banglore',560001,'karnataka',0),
+('c00005','hansel colaco','mumbai',400060,'maharashtra',2000),
+('c00006','deepak sharma','mangalore',560050,'karnataka',0);
+
+
+
+insert into product_master2 values
+('p00001','t-shirts',5,'piece',200,50,350,250);
+insert into product_master2 values
+('p0345','shirts',6,'piece',150,50,500,350);
+insert into product_master2 values
+('p06734','cotton jeans',5,'piece',100,20,600,450);
+insert into product_master2 values
+('p07865','jeans',5,'piece',100,20,750,500);
+insert into product_master2 values
+('p07868','trousers',2,'piece',150,50,850,550);
+insert into product_master2 values
+('p07885','pull overs',2.5,'piece',80,30,700,450);
+insert into product_master2 values
+('p07965','denim shirts',4,'piece',100,4,350,250);
+insert into product_master2 values
+('p07975','lycra tops',5,'piece',70,30,300,175);
+insert into product_master2 values
+('p08865','skirts',5,'piece',75,30,450,300);
+
+
+
+insert into salesman_master2 values
+('s00001','aman','a/14','worli','mumbai',400002,'maharashtra',3000,100,50,'good');
+insert into salesman_master2 values
+('s00002','65','a/14','nariman','mumbai',400001,'maharashtra',3000,200,100,'good');
+insert into salesman_master2 values
+('s00003','ray','p-7','bandra','mumbai',400032,'maharashtra',3000,200,100,'good');
+insert into salesman_master2 values
+('s00004','ashish','a/5','juhu','mumbai',400044,'maharashtra',3500,200,150,'good');
+
+
+
+1) Find out the names of all the clients.
+	select name from client_master1;
+
+2) Retrieve the entire contents of the Client_Master table.
+	select * from client_master1
+
+3) Retrieve the list of names, city and the state of all clients.
+	select name,city,state from client_master1
+
+
+
